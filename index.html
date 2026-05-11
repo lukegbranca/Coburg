@@ -33,8 +33,8 @@
           -52deg,
           transparent 0px,
           transparent 17px,
-          rgba(150, 100, 40, 0.038) 17px,
-          rgba(150, 100, 40, 0.038) 18px
+          rgba(150, 100, 40, 0.022) 17px,
+          rgba(150, 100, 40, 0.022) 18px
         );
       -webkit-font-smoothing: antialiased;
     }
@@ -53,7 +53,7 @@
     /* NAV */
     nav {
       background-color: var(--white);
-      background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.038) 17px, rgba(150,100,40,0.038) 18px);
+      background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.022) 17px, rgba(150,100,40,0.022) 18px);
       height: var(--nav-h);
       padding: 0 56px;
       display: flex;
@@ -98,7 +98,7 @@
       padding: 44px 48px 44px 64px;
       display: flex; flex-direction: column; justify-content: center;
       background: var(--cream);
-      background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.038) 17px, rgba(150,100,40,0.038) 18px);
+      background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.022) 17px, rgba(150,100,40,0.022) 18px);
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 7px;
@@ -129,6 +129,7 @@
       border: 1.5px solid var(--border); color: var(--ink); padding: 13px 26px;
       font-size: 0.9rem; font-weight: 600; text-decoration: none;
       border-radius: 7px; transition: border-color 0.2s;
+      background: var(--cream);
     }
     .btn-outline:hover { border-color: var(--amber); color: var(--amber-dark); }
     .hero-trust { display: flex; flex-direction: column; gap: 8px; }
@@ -138,7 +139,7 @@
     .hero-image { overflow: hidden; align-self: stretch; position: relative; }
     .hero-image img {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center 20%;
+      object-fit: cover; object-position: center center;
     }
 
     /* INFO BAR */
@@ -152,7 +153,7 @@
     .info-item svg { flex-shrink: 0; color: var(--amber); }
 
     /* ABOUT */
-    .about-section { padding: 52px 72px; background-color: var(--white); background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.038) 17px, rgba(150,100,40,0.038) 18px); overflow: hidden; }
+    .about-section { padding: 52px 72px; background-color: var(--white); background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.022) 17px, rgba(150,100,40,0.022) 18px); overflow: hidden; }
     .about-inner {
       max-width: 1120px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
@@ -177,7 +178,7 @@
     .sig { font-family: 'Fraunces', serif; font-style: italic; color: var(--amber); font-size: 0.97rem; font-weight: 700; margin-top: 8px; }
 
     /* SERVICES */
-    .services-section { background-color: var(--amber-pale); background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.038) 17px, rgba(150,100,40,0.038) 18px); padding: 48px 72px; }
+    .services-section { background-color: var(--amber-pale); background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.022) 17px, rgba(150,100,40,0.022) 18px); padding: 48px 72px; }
     .section-header { text-align: center; margin-bottom: 24px; }
     .section-header h2 { font-family: 'Fraunces', serif; font-size: 2.1rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
     .section-header p { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
@@ -206,7 +207,7 @@
     .photo-wrap:hover img { transform: scale(1.05); }
 
     /* REVIEWS */
-    .reviews-section { background-color: var(--white); background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.038) 17px, rgba(150,100,40,0.038) 18px); padding: 48px 72px; }
+    .reviews-section { background-color: var(--white); background-image: repeating-linear-gradient(-52deg, transparent 0px, transparent 17px, rgba(150,100,40,0.022) 17px, rgba(150,100,40,0.022) 18px); padding: 48px 72px; }
     .reviews-inner { max-width: 1120px; margin: 0 auto; }
     .reviews-header { text-align: center; margin-bottom: 10px; }
     .reviews-header h2 { font-family: 'Fraunces', serif; font-size: 2.1rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
