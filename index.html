@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coburg Dog Grooming | Coburg, VIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --amber: #c4845a;
+      --amber-dark: #9e6640;
+      --amber-light: #f5ede0;
+      --amber-pale: #fdf8f3;
+      --ink: #231a12;
+      --muted: #7a6050;
+      --cream: #faf6f1;
+      --white: #ffffff;
+      --border: #e8d8c8;
+      --green: #5a9a72;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      padding: 18px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .logo span { color: var(--amber); display: block; font-style: italic; font-size: 0.9rem; font-weight: 700; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+    nav ul li a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: var(--ink); }
+    .nav-cta {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 8px;
+      background: var(--amber) !important;
+      color: var(--white) !important;
+      padding: 11px 22px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      font-size: 0.875rem !important;
+      white-space: nowrap;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--amber-dark) !important; }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+      align-items: stretch;
+      overflow: hidden;
+    }
+    .hero-text {
+      padding: 80px 56px 64px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--cream);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--amber-light);
+      color: var(--amber-dark);
+      font-size: 0.69rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .hero-text h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 4.8rem;
+      font-weight: 900;
+      line-height: 1.02;
+      margin-bottom: 24px;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+    }
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--amber);
+    }
+    .hero-text p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 40px;
+      max-width: 390px;
+      font-weight: 400;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--amber);
+      color: var(--white);
+      padding: 15px 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--amber-dark); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1.5px solid var(--border);
+      color: var(--ink);
+      padding: 15px 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--amber); color: var(--amber-dark); }
+    .hero-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .trust-pill svg { color: var(--amber); flex-shrink: 0; }
+
+    /* HERO IMAGE */
+    .hero-image {
+      overflow: hidden;
+      align-self: stretch;
+      min-height: 90vh;
+      position: relative;
+    }
+    .hero-image img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    /* INFO BAR */
+    .info-bar {
+      background: var(--ink);
+      padding: 22px 72px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.87rem;
+      font-weight: 400;
+    }
+    .info-item svg { flex-shrink: 0; color: var(--amber); }
+
+    /* ABOUT */
+    .about-section { padding: 96px 72px; background: var(--white); }
+    .about-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: center;
+    }
+    .about-imgs { position: relative; height: 520px; }
+    .about-img-main {
+      width: 74%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .about-img-secondary {
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+      width: 54%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 5px solid var(--white);
+      box-shadow: 0 20px 56px rgba(0,0,0,0.12);
+    }
+    .section-tag {
+      font-size: 0.69rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .about-text h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .about-text p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.9;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .sig {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: var(--amber);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* SERVICES */
+    .services-section { background: var(--amber-pale); padding: 96px 72px; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .section-header p { color: var(--muted); font-size: 0.96rem; margin-top: 10px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 34px 24px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .service-card:hover {
+      box-shadow: 0 16px 48px rgba(196,132,90,0.14);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--amber-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber);
+      margin-bottom: 18px;
+    }
+    .service-card h3 { font-size: 0.97rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .service-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+
+    /* GALLERY */
+    .photos-section { background: #1c2b28; padding: 88px 72px; }
+    .photos-header { text-align: center; margin-bottom: 44px; }
+    .photos-header .section-tag { color: var(--amber); }
+    .photos-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .photo-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 285px;
+    }
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+    .photo-wrap:hover img { transform: scale(1.04); }
+
+    /* REVIEWS */
+    .reviews-section { background: var(--white); padding: 96px 72px; }
+    .reviews-inner { max-width: 1120px; margin: 0 auto; }
+    .reviews-header { text-align: center; margin-bottom: 16px; }
+    .reviews-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .rating-summary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+    .rating-big {
+      font-family: 'Fraunces', serif;
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .rating-stars-big { color: #e8a020; font-size: 1.3rem; letter-spacing: 3px; }
+    .rating-count { font-size: 0.82rem; color: #aaa; margin-top: 3px; }
+    .g-logo { font-size: 1.05rem; font-weight: 700; }
+    .g-logo span:nth-child(1){color:#4285F4} .g-logo span:nth-child(2){color:#EA4335}
+    .g-logo span:nth-child(3){color:#FBBC05} .g-logo span:nth-child(4){color:#4285F4}
+    .g-logo span:nth-child(5){color:#34A853} .g-logo span:nth-child(6){color:#EA4335}
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+    .review-card {
+      background: var(--amber-pale);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid var(--border);
+    }
+    .review-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .reviewer-avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 800; font-size: 1rem; flex-shrink: 0;
+    }
+    .reviewer-name { font-weight: 700; font-size: 0.93rem; color: var(--ink); }
+    .reviewer-meta { font-size: 0.76rem; color: #aaa; margin-top: 2px; }
+    .review-stars { color: #e8a020; font-size: 0.88rem; letter-spacing: 2px; margin-bottom: 10px; }
+    .review-text { font-size: 0.9rem; color: #555; line-height: 1.82; }
+    .review-date { font-size: 0.73rem; color: #bbb; margin-top: 12px; }
+    .reviews-cta { text-align: center; }
+    .btn-google {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: 1.5px solid var(--border); padding: 13px 30px; border-radius: 8px;
+      font-size: 0.93rem; font-weight: 600; color: var(--ink); text-decoration: none;
+      background: var(--white); transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .btn-google:hover { border-color: #aaa; box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+    /* CTA */
+    .cta-section {
+      background: var(--ink);
+      padding: 88px 72px;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-section .section-tag { color: var(--amber); }
+    .cta-section h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 3rem; font-weight: 900; margin-bottom: 14px; letter-spacing: -0.03em;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 420px;
+      margin: 0 auto 34px; line-height: 1.8;
+    }
+    .btn-amber {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--amber); color: var(--white);
+      padding: 17px 38px; font-weight: 700; font-size: 0.98rem;
+      text-decoration: none; border-radius: 8px;
+      transition: transform 0.15s, background 0.2s;
+    }
+    .btn-amber:hover { transform: translateY(-2px); background: var(--amber-dark); }
+
+    /* FOOTER */
+    footer {
+      background: #0e1510; padding: 32px 72px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px; color: #666; font-size: 0.84rem;
+    }
+    footer .logo { font-family: 'Fraunces', serif; color: var(--white); font-size: 1.15rem; text-decoration: none; font-weight: 700; }
+    footer .logo span { color: var(--amber); display: inline; font-style: italic; }
+    footer a { color: #666; text-decoration: none; }
+    footer a:hover { color: #999; }
+
+    .placeholder-note {
+      background: #fff8e1; border: 1px solid #ffe082;
+      color: #7a5c00; padding: 12px 24px; text-align: center;
+      font-size: 0.82rem; font-weight: 500;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      nav ul { gap: 16px; }
+      nav ul li:not(:last-child) { display: none; }
+      .hero { grid-template-columns: 1fr 1fr; min-height: 60vh; }
+      .hero-text { padding: 28px 16px 28px 20px; }
+      .hero-text h1 { font-size: 2rem; margin-bottom: 12px; }
+      .hero-text p { font-size: 0.82rem; line-height: 1.65; margin-bottom: 18px; }
+      .hero-badge { font-size: 0.58rem; padding: 5px 10px; margin-bottom: 14px; }
+      .hero-actions { gap: 8px; margin-bottom: 20px; flex-direction: column; }
+      .btn-primary, .btn-outline { padding: 11px 14px; font-size: 0.78rem; justify-content: center; }
+      .hero-trust { gap: 10px; }
+      .trust-pill { font-size: 0.7rem; }
+      .trust-pill svg { width: 12px; height: 12px; }
+      .hero-image { min-height: 60vh; }
+      .info-bar { padding: 20px 24px; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .about-section, .services-section, .photos-section, .reviews-section, .cta-section { padding: 60px 24px; }
+      .about-inner { grid-template-columns: 1fr; gap: 36px; }
+      .about-imgs { height: 280px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .photos-grid { grid-template-columns: 1fr 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .hero-text h1 { font-size: 1.65rem; }
+      .hero-text p { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .photos-grid { grid-template-columns: 1fr; }
+      .info-bar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="placeholder-note">
+    📸 <strong>Image placeholders active.</strong> Replace <code>images/image01.png</code> → <code>image09.png</code> with real photos from Coburg Dog Grooming's Google Business profile before sending.
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">Coburg Dog Grooming <span>by Amanda</span></a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Find Us</a></li>
+      <li>
+        <a href="tel:0409512062" class="nav-cta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006 6l1.27-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16h1.92z"></path></svg>
+          Book Now
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Coburg · Even the anxious ones
+      </div>
+      <h1>The groomer<br>nervous dogs<br>actually<br><em>love.</em></h1>
+      <p>Amanda has been grooming dogs in Coburg for years. Patient, unhurried, and genuinely brilliant with anxious pets — your dog will leave looking great and actually happy about it.</p>
+      <div class="hero-actions">
+        <a href="tel:0409512062" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Book an Appointment
+        </a>
+        <a href="#services" class="btn-outline">
+          Our Services
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          4.7 on Google · 25 reviews
+        </div>
+        <div class="trust-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a6 6 0 0112 0v2"></path></svg>
+          Specialist in anxious &amp; nervous dogs
+        </div>
+        <div class="trust-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          87 Harding St, Coburg VIC 3058
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="images/image01.png" alt="Dog groomed by Amanda at Coburg Dog Grooming">
+    </div>
+  </section>
+
+  <!-- INFO BAR -->
+  <div class="info-bar">
+    <div class="info-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      87 Harding St, Coburg VIC 3058
+    </div>
+    <div class="info-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006 6l1.27-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16h1.92z"></path></svg>
+      0409 512 062
+    </div>
+    <div class="info-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      Mon–Sun · By appointment
+    </div>
+    <div class="info-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+      4.7 ★ · 25 Google Reviews
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-inner">
+      <div class="about-imgs">
+        <img class="about-img-main" src="images/image02.png" alt="Amanda grooming a dog in Coburg">
+        <img class="about-img-secondary" src="images/image03.png" alt="Happy dog after groom at Coburg Dog Grooming">
+      </div>
+      <div class="about-text">
+        <span class="section-tag">About Amanda</span>
+        <h2>Born for this job — dogs know it too</h2>
+        <p>Amanda has built a loyal following in Coburg through one simple thing: a genuine gift with dogs. She's unhurried, warm, and deeply attuned to how each individual dog is feeling — which is exactly why anxious pets walk out happy instead of stressed.</p>
+        <p>She takes on the dogs other groomers turn away. Mini schnauzers that hate scissors, Frenchies with strong opinions, nervous rescues on their first groom — Amanda handles them all with the patience and care they need.</p>
+        <p>Regular clients book weeks in advance and clients' dogs look forward to coming back. That says everything about the experience Amanda provides.</p>
+        <p class="sig">— Amanda, Coburg Dog Grooming</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <span class="section-tag">What We Offer</span>
+      <h2>Grooming Services</h2>
+      <p>All breeds welcome. Call Amanda for pricing — it varies by breed, size &amp; coat condition.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+        </div>
+        <h3>Full Groom</h3>
+        <p>Bath, blow dry, breed-specific or custom style cut, nail trim and ear clean. All breeds and sizes catered for.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"></path></svg>
+        </div>
+        <h3>Wash &amp; Blow Dry</h3>
+        <p>Full bath with quality shampoo and conditioner, hand blow dried and brushed through. Includes nail trim.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01M7 20v-4"></path><path d="M12 20v-8"></path><path d="M17 20v-6"></path><path d="M22 4v16"></path></svg>
+        </div>
+        <h3>Nail Trim</h3>
+        <p>Nail clipping for all breeds. Add to any groom or book as a standalone service. Gentle technique for anxious dogs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path></svg>
+        </div>
+        <h3>Anxious Dog Groom</h3>
+        <p>Specialist handling for nervous, reactive, or difficult-to-groom dogs. Amanda's patience and calm approach makes it possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="photos-section" id="gallery">
+    <div class="photos-header">
+      <span class="section-tag">Gallery</span>
+      <h2>Fresh from Amanda's Salon</h2>
+    </div>
+    <div class="photos-grid">
+      <div class="photo-wrap"><img src="images/image04.png" alt="Dog after groom Coburg" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image05.png" alt="Mini schnauzer groom" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image06.png" alt="Dog grooming Coburg" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image07.png" alt="Cavoodle after groom" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image01.png" alt="Dog groom result" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image08.png" alt="Happy dog Coburg" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image09.png" alt="Styled dog Coburg" loading="lazy"></div>
+      <div class="photo-wrap"><img src="images/image02.png" alt="Dog groomed in Coburg" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section" id="reviews">
+    <div class="reviews-inner">
+      <div class="reviews-header">
+        <span class="section-tag">Google Reviews</span>
+        <h2>What Dog Owners Say</h2>
+      </div>
+      <div class="rating-summary">
+        <div class="rating-big">4.7</div>
+        <div>
+          <div class="rating-stars-big">★★★★★</div>
+          <div class="rating-count">25 Google Reviews</div>
+        </div>
+        <div class="g-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background:#c4845a;">S</div>
+            <div><div class="reviewer-name">Simone</div><div class="reviewer-meta">Local reviewer</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"My puppy, Ozzie, was so well taken care of at Coburg Grooming. I was nervous about where to book her for her first puppy cut, but there was no need to worry, as she was given the extra time and attention she needed to have a very positive experience. She came out smiling, happy and with a cute haircut!"</div>
+          <div class="review-date">Recent review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background:#9e6640;">T</div>
+            <div><div class="reviewer-name">Taryn</div><div class="reviewer-meta">Local reviewer</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Amanda is absolutely amazing with our dogs. They love going to her every 4 weeks. She is the most caring and compassionate groomer we have ever used. I wouldn't hesitate to recommend Amanda from Coburg Dog Grooming!"</div>
+          <div class="review-date">Recent review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background:#5a9a72;">M</div>
+            <div><div class="reviewer-name">Mick</div><div class="reviewer-meta">Local reviewer</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"A dog groomer that can actually handle nervous and anxious dogs. Forget everywhere else. Amanda was and continues to be the perfect solution for us when our boy Buckley got banned from everywhere else for being too much. He comes out happy every time. She always does great cuts at a reasonable price. Can't recommend enough!"</div>
+          <div class="review-date">Recent review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background:#c4845a;">R</div>
+            <div><div class="reviewer-name">Russell</div><div class="reviewer-meta">Local reviewer</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"I know my dog Ben &amp; my friend's dog, Robbo get the most cared for &amp; the best treatment from Amanda. We book ahead so we don't miss our regular dog wash, blow dry, full groom &amp; nail trim. We always walk out with satisfaction. Coburg Dog Groom is affordable, our pets love being there, great, friendly atmosphere. Amanda is so good with her clients. I would highly recommend her."</div>
+          <div class="review-date">Recent review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background:#9e6640;">K</div>
+            <div><div class="reviewer-name">Kate</div><div class="reviewer-meta">Local reviewer</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Amanda is the most patient and understanding groomer we have ever used. Our mini schnauzer is highly anxious and has always hated grooming. Amanda is the only person who can get scissors near to her. She takes her time and does an excellent job."</div>
+          <div class="review-date">Recent review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background:#5a9a72;">J</div>
+            <div><div class="reviewer-name">Jane</div><div class="reviewer-meta">Local reviewer</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Amanda is born to this job. My Smudge is a nearly 12 year old who was terrified of clippers and the whole experience. Now she confidently walks in and gets bathed, groomed, nails clipped and comes out wagging her tail. I love this place."</div>
+          <div class="review-date">Recent review</div>
+        </div>
+      </div>
+      <div class="reviews-cta">
+        <a href="https://www.google.com/maps/search/Coburg+Dog+Grooming+87+Harding+St+Coburg" class="btn-google" target="_blank">
+          <span><span style="color:#4285F4;font-weight:800;">G</span><span style="color:#EA4335;font-weight:800;">o</span><span style="color:#FBBC05;font-weight:800;">o</span><span style="color:#4285F4;font-weight:800;">g</span><span style="color:#34A853;font-weight:800;">l</span><span style="color:#EA4335;font-weight:800;">e</span></span>
+          Read All Google Reviews
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <span class="section-tag">Book with Amanda</span>
+    <h2>Give your dog the care they deserve.</h2>
+    <p>Call Amanda to check availability. Regular clients book in advance — grab your spot before she fills up.</p>
+    <a href="tel:0409512062" class="btn-amber">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006 6l1.27-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16h1.92z"></path></svg>
+      0409 512 062
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="logo">Coburg Dog Grooming <span>by Amanda</span></a>
+    <p>87 Harding St, Coburg VIC 3058 · By appointment</p>
+    <a href="tel:0409512062">0409 512 062</a>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
