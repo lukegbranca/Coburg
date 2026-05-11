@@ -28,6 +28,16 @@
       background: var(--cream);
       -webkit-font-smoothing: antialiased;
     }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 300px 300px;
+      opacity: 0.038;
+      pointer-events: none;
+      z-index: 9999;
+    }
 
     /* NAV */
     nav {
@@ -216,7 +226,7 @@
     .info-item svg { flex-shrink: 0; color: var(--amber); }
 
     /* ABOUT */
-    .about-section { padding: 96px 72px; background: var(--white); }
+    .about-section { padding: 96px 72px; background: #fefcf9; }
     .about-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -341,19 +351,20 @@
     .photo-wrap {
       border-radius: 10px;
       overflow: hidden;
-      height: 285px;
+      aspect-ratio: 4/5;
     }
     .photo-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top center;
       display: block;
       transition: transform 0.55s ease;
     }
     .photo-wrap:hover img { transform: scale(1.04); }
 
     /* REVIEWS */
-    .reviews-section { background: var(--white); padding: 96px 72px; }
+    .reviews-section { background: #fefcf9; padding: 96px 72px; }
     .reviews-inner { max-width: 1120px; margin: 0 auto; }
     .reviews-header { text-align: center; margin-bottom: 16px; }
     .reviews-header h2 {
@@ -390,7 +401,7 @@
       margin-bottom: 40px;
     }
     .review-card {
-      background: var(--amber-pale);
+      background: #fdf8f3;
       border-radius: 12px;
       padding: 30px;
       border: 1px solid var(--border);
@@ -452,11 +463,6 @@
     footer a { color: #666; text-decoration: none; }
     footer a:hover { color: #999; }
 
-    .placeholder-note {
-      background: #fff8e1; border: 1px solid #ffe082;
-      color: #7a5c00; padding: 12px 24px; text-align: center;
-      font-size: 0.82rem; font-weight: 500;
-    }
 
     /* MOBILE */
     @media (max-width: 900px) {
@@ -479,7 +485,8 @@
       .about-inner { grid-template-columns: 1fr; gap: 36px; }
       .about-imgs { height: 280px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .photos-grid { grid-template-columns: 1fr 1fr; }
+      .photos-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .photo-wrap { aspect-ratio: 3/4; }
       .reviews-grid { grid-template-columns: 1fr; }
       footer { padding: 24px 20px; flex-direction: column; text-align: center; }
     }
@@ -487,16 +494,13 @@
       .hero-text h1 { font-size: 1.65rem; }
       .hero-text p { display: none; }
       .services-grid { grid-template-columns: 1fr; }
-      .photos-grid { grid-template-columns: 1fr; }
+      .photos-grid { grid-template-columns: 1fr; gap: 10px; }
+      .photo-wrap { aspect-ratio: 4/3; }
       .info-bar { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-  <div class="placeholder-note">
-    📸 <strong>Image placeholders active.</strong> Replace <code>images/image01.png</code> → <code>image09.png</code> with real photos from Coburg Dog Grooming's Google Business profile before sending.
-  </div>
 
   <!-- NAV -->
   <nav>
@@ -583,11 +587,11 @@
       </div>
       <div class="about-text">
         <span class="section-tag">About Amanda</span>
-        <h2>Born for this job — dogs know it too</h2>
-        <p>Amanda has built a loyal following in Coburg through one simple thing: a genuine gift with dogs. She's unhurried, warm, and deeply attuned to how each individual dog is feeling — which is exactly why anxious pets walk out happy instead of stressed.</p>
+        <h2>Born for this job, dogs know it too</h2>
+        <p>Amanda has built a loyal following in Coburg through one simple thing: a genuine gift with dogs. She's unhurried, warm, and deeply attuned to how each individual dog is feeling, which is exactly why anxious pets walk out happy instead of stressed.</p>
         <p>She takes on the dogs other groomers turn away. Mini schnauzers that hate scissors, Frenchies with strong opinions, nervous rescues on their first groom — Amanda handles them all with the patience and care they need.</p>
         <p>Regular clients book weeks in advance and clients' dogs look forward to coming back. That says everything about the experience Amanda provides.</p>
-        <p class="sig">— Amanda, Coburg Dog Grooming</p>
+        <p class="sig">Amanda, Coburg Dog Grooming</p>
       </div>
     </div>
   </section>
